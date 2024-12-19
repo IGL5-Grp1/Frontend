@@ -1,0 +1,54 @@
+<mat-sidenav-container class="sidenav-container" style="background-color:white;">
+
+
+
+  <mat-sidenav  mode="side"     [(opened)]="isSidebarOpen"  opened class="sidenav">
+    
+    <!-- Logo -->
+    <div class="logo-container">
+      <img src="assets/logo.png" alt="Logo" class="logo" />
+    </div>
+
+    <!-- Menu Items -->
+    <mat-nav-list>
+      <a mat-list-item routerLink="/dashboard" style="display: flex; align-items: center; padding: 6px 10px; text-decoration: none;">
+        <mat-icon style="color: white; margin-right: 8px; font-size: 18px; ">dashboard</mat-icon>
+        <span style="color: white; font-size: 15px; font-weight: 400;">Dashboard</span>
+      </a>
+    
+      <a mat-list-item routerLink="/universities" style="display: flex; align-items: center; padding: 6px 10px; text-decoration: none;">
+        <mat-icon style="color: white; margin-right: 8px; font-size: 18px;">school</mat-icon>
+        <span style="color: white; font-size: 15px; font-weight: 400;">Gestion des Universités</span>
+      </a>
+    
+      <a mat-list-item routerLink="/sessions" style="display: flex; align-items: center; padding: 6px 10px; text-decoration: none;">
+        <mat-icon style="color: white; margin-right: 8px; font-size: 18px;">event</mat-icon>
+        <span style="color: white; font-size: 15px; font-weight: 400;">Gestion des Sessions</span>
+      </a>
+    
+      <a mat-list-item routerLink="/departments" style="display: flex; align-items: center; padding: 6px 10px; text-decoration: none;">
+        <mat-icon style="color: white; margin-right: 8px; font-size: 18px;">apartment</mat-icon>
+        <span style="color: white; font-size: 15px; font-weight: 400;">Gestion des Départements</span>
+      </a>
+    
+      <a mat-list-item routerLink="/professors" style="display: flex; align-items: center; padding: 6px 10px; text-decoration: none;">
+        <mat-icon style="color: white; margin-right: 8px; font-size: 18px;">people</mat-icon>
+        <span style="color: white; font-size: 15px; font-weight: 400;">Gestion des Professeurs</span>
+      </a>
+    
+      <a mat-list-item routerLink="/students" style="display: flex; align-items: center; padding: 6px 10px; text-decoration: none;">
+        <mat-icon style="color: white; margin-right: 8px; font-size: 18px;">person</mat-icon>
+        <span style="color: white; font-size: 15px; font-weight: 400;">Gestion des Etudiants</span>
+      </a>
+    </mat-nav-list>
+    
+
+    <!-- Logout Button -->
+    <div class="logout-container">
+      <button mat-flat-button color="warn" class="logout-button">
+        <mat-icon>exit_to_app</mat-icon>
+        <span>Se déconnecter</span>
+      </button>
+    </div>
+  </mat-sidenav>
+</mat-sidenav-container>
