@@ -79,4 +79,7 @@ export class CreateEnseignantComponent {
       alert('Veuillez remplir tous les champs obligatoires');
     }
   }
+  goToTeacherTable(): void {
+    this.router.navigate(['/teacher-table']);
+  }
 }
