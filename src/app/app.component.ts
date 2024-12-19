@@ -1,16 +1,22 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
-import { TeacherTableComponent } from "./components/teacher-table/teacher-table.component";
-import { SidebarComponent } from "./components/sidebar/sidebar.component";
+import {Component} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {RouterOutlet, Router} from '@angular/router';
+import {SidebarComponent} from "./components/sidebar/sidebar.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, TeacherTableComponent, SidebarComponent],
+  imports: [CommonModule, RouterOutlet, SidebarComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
   title = 'examfront';
+
+  constructor(private router: Router) {
+  }
+
+  shouldShowSidebar(): boolean {
+    return this.router.url !== '/login';
+  }
 }
