@@ -1,43 +1,71 @@
 .login-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
   min-height: 100vh;
-  background-color: #1a237e;
+  width: 100%;
 }
 
-.login-box {
-  background: white;
+.logo-side {
+  flex: 1;
+  background-color: #1a237e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 2rem;
-  border-radius: 8px;
-  width: 100%;
-  max-width: 400px;
 }
 
 .logo {
-  width: 80px;
-  margin-bottom: 1rem;
+  width: 150px;
+  height: auto;
+}
+
+.form-side {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background-color: white;
+}
+
+.form-content {
+  width: 100%;
+  max-width: 400px;
+  padding: 0 1rem;
+}
+
+h1 {
+  color: #1a237e;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: #666;
+  margin-bottom: 2rem;
 }
 
 .form-group {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 
   label {
     display: block;
     margin-bottom: 0.5rem;
     color: #333;
+    font-weight: 500;
   }
 }
 
 .form-control {
   width: 100%;
-  padding: 0.5rem;
+  padding: 0.75rem;
   border: 1px solid #ddd;
-  border-radius: 4px;
+  border-radius: 8px;
+  font-size: 1rem;
 
   &:focus {
     outline: none;
     border-color: #4051b5;
+    box-shadow: 0 0 0 2px rgba(64, 81, 181, 0.1);
   }
 }
 
@@ -47,22 +75,53 @@
 
 .password-toggle {
   position: absolute;
-  right: 10px;
+  right: 12px;
   top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
   color: #666;
 }
 
+.form-check {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1.5rem 0;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  input {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.forgot-password {
+  color: #4051b5;
+  text-decoration: none;
+  font-weight: 500;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
 .btn-login {
   width: 100%;
-  padding: 0.75rem;
+  padding: 0.875rem;
   background: #4051b5;
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.2s;
+  margin-top: 1rem;
 
   &:disabled {
     background: #9fa8da;
@@ -74,22 +133,17 @@
   }
 }
 
-.form-check {
-  display: flex;
-  align-items: center;
-  margin: 1rem 0;
-
-  input {
-    margin-right: 0.5rem;
+// Responsive design
+@media (max-width: 768px) {
+  .login-container {
+    flex-direction: column;
   }
-}
 
-.forgot-password {
-  margin-left: auto;
-  color: #4051b5;
-  text-decoration: none;
+  .logo-side {
+    padding: 3rem;
+  }
 
-  &:hover {
-    text-decoration: underline;
+  .form-side {
+    padding: 2rem 1rem;
   }
 }

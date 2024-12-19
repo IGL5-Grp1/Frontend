@@ -1,18 +1,17 @@
 .layout {
-    display: flex; /* Disposition en colonnes */
-    min-height: 100vh; /* Prend toute la hauteur de l'écran */
-  
-    app-sidebar {
-      width: 250px; /* Largeur fixe pour la barre latérale */
-      flex-shrink: 0; /* Empêche la barre latérale de se réduire */
-      background-color: #0d47a1; /* Couleur de la barre latérale */
-      color: white;
-    }
-  
-    .main-content {
-      flex: 1; /* Le contenu principal occupe tout l'espace disponible */
-      padding: 20px; /* Ajoute un espacement autour du contenu principal */
-      background-color: #f5f5f5; /* Couleur de fond */
-    }
+  display: flex; /* Disposition en colonnes */
+  min-height: 100vh; /* Prend toute la hauteur de l'écran */
+
+  app-sidebar {
+    width: 250px; /* Largeur fixe pour la barre latérale */
+    flex-shrink: 0; /* Empêche la barre latérale de se réduire */
+    background-color: #0d47a1; /* Couleur de la barre latérale */
+    color: white;
   }
-  
+
+  .main-content {
+    flex: 1; /* Le contenu principal occupe tout l'espace disponible */
+    //padding: 20px; /* Ajoute un espacement autour du contenu principal */
+    background-color: #f5f5f5; /* Couleur de fond */
+  }
+}
