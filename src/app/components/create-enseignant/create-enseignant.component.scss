@@ -1,0 +1,83 @@
+.layout {
+  display: flex; /* Disposition en colonnes */
+  min-height: 100vh; /* Prend toute la hauteur de l'écran */
+
+  app-sidebar {
+    width: 280px; /* Largeur fixe pour la barre latérale */
+    flex-shrink: 0; /* Empêche la barre latérale de se réduire */
+    background-color: #0d47a1; /* Couleur de la barre latérale */
+    color: white;
+  }
+
+  .main-content {
+    flex: 1; /* Le contenu principal occupe tout l'espace disponible */
+    padding: 20px; /* Ajoute un espacement autour du contenu principal */
+    background-color: #ffffff; /* Couleur de fond */
+  }
+}
+.header {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 10px;
+
+
+  h2 {
+    margin: 0;
+    font-size: 27px;
+    
+  }
+  
+}
+.header-line {
+  border: none;
+  border-top: 2px solid #e0e0e0; // Light gray line
+  margin: 10px 0; // Space between title and rest of the content
+  margin-bottom: 60px;
+
+}
+.create-enseignant-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  
+ 
+  
+    .profile-picture {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 20px 0;
+      position: relative;
+  
+      .profile-img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+  
+      .edit-icon {
+        position: absolute;
+        bottom: 0;
+        right: calc(50% - 60px);
+        background: white;
+        border-radius: 50%;
+      }
+    }
+  
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+  
+    .submit-button {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+
+    }
+    
+  }
+  

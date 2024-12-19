@@ -34,13 +34,17 @@ export class LoginComponent {
                 next: (response) => {
                     if (response.accessToken) {
                         localStorage.setItem('accessToken', response.accessToken);
-                        this.router.navigate(['/teacher-table']);
+                        this.router.navigate(['/teacher-table']); // Redirect to teacher table after login
+                    } else {
+                        alert('Login failed. Please try again.');
                     }
                 },
                 error: (error) => {
                     console.error('Login failed:', error);
-                    // Handle error appropriately
+                    alert('Login failed. Please check your credentials.');
                 }
             });
     }
+ 
+    
 }

@@ -4,6 +4,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { NgModule } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
@@ -14,8 +15,13 @@ import { NgModule } from '@angular/core';
 })
 export class SidebarComponent {
   isSidebarOpen = true; // Default state of the sidebar
+  constructor(private router: Router) {}
 
   toggleSidebar() {
     this.isSidebarOpen = !this.isSidebarOpen; // Toggle the state
   }
+  logout() {
+    localStorage.removeItem('accessToken'); // Remove token
+    this.router.navigate(['/login']); // Redirect to login
+}
 }

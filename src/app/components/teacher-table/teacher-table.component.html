@@ -1,92 +1,97 @@
-<div class="teacher-management-container">
-  <!-- Header Section -->
-  <div class="header">
-    <button mat-icon-button>
-      <mat-icon>arrow_back</mat-icon>
-    </button>
-    <h2>Gestion des enseignants</h2>
+<div class="layout">
+  <app-sidebar></app-sidebar> <!-- Sidebar -->
+  <div class="main-content">
+    <div class="teacher-management-container">
+      <!-- Header Section -->
+      <div class="header">
+        <button mat-icon-button>
+          <mat-icon>arrow_back</mat-icon>
+        </button>
+        <h2>Gestion des enseignants</h2>
+      </div>
+
+      <!-- Search and Add Button -->
+      <div class="search-bar">
+        <mat-form-field appearance="outline">
+          <mat-label>Chercher</mat-label>
+          <input matInput placeholder="Rechercher un enseignant" />
+          <button mat-icon-button matSuffix>
+            <mat-icon>search</mat-icon>
+          </button>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" routerLink="/create-enseignant">
+          <mat-icon>add</mat-icon>
+          Ajouter
+        </button>
+      </div>
+
+      <!-- Data Table -->
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <!-- Checkbox Column -->
+        <ng-container matColumnDef="select">
+          <th mat-header-cell *matHeaderCellDef></th>
+          <td mat-cell *matCellDef="let element">
+            <mat-checkbox></mat-checkbox>
+          </td>
+        </ng-container>
+
+        <!-- Profile Column -->
+        <ng-container matColumnDef="profile">
+          <th mat-header-cell *matHeaderCellDef>Profile</th>
+          <td mat-cell *matCellDef="let element">
+            <div class="profile-cell">
+              <img src="assets/profile.jpg" alt="Profile" />
+              <div>
+                <div>{{ element.name }}</div>
+                <div class="subtitle">{{ element.title }}</div>
+              </div>
+            </div>
+          </td>
+        </ng-container>
+
+        <!-- Department Column -->
+        <ng-container matColumnDef="department">
+          <th mat-header-cell *matHeaderCellDef>Département</th>
+          <td mat-cell *matCellDef="let element">
+            <span class="tag" [ngClass]="element.departmentColor">
+              {{ element.department }}
+            </span>
+          </td>
+        </ng-container>
+
+        <!-- Phone Column -->
+        <ng-container matColumnDef="cin">
+          <th mat-header-cell *matHeaderCellDef>CIN</th>
+          <td mat-cell *matCellDef="let element">{{ element.cin }}</td>
+        </ng-container>
+
+        <!-- Faculty Column -->
+        <ng-container matColumnDef="faculty">
+          <th mat-header-cell *matHeaderCellDef>Faculté</th>
+          <td mat-cell *matCellDef="let element">{{ element.faculty }}</td>
+        </ng-container>
+
+        <!-- Actions Column -->
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef>Action</th>
+          <td mat-cell *matCellDef="let element">
+            <button mat-icon-button color="primary"><mat-icon>edit</mat-icon></button>
+            <button mat-icon-button color="accent" routerLink="/create-enseignant"><mat-icon>add</mat-icon></button>
+            <button mat-icon-button color="warn"><mat-icon>delete</mat-icon></button>
+          </td>
+        </ng-container>
+
+        <!-- Table Header and Row Definitions -->
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+
+      <!-- Pagination -->
+      <mat-paginator
+        [pageSizeOptions]="[10, 20, 50]"
+        showFirstLastButtons
+      ></mat-paginator>
+    </div>
   </div>
-
-  <!-- Search and Add Button -->
-  <div class="search-bar">
-    <mat-form-field appearance="outline">
-      <mat-label>Chercher</mat-label>
-      <input matInput placeholder="Rechercher un enseignant" />
-      <button mat-icon-button matSuffix>
-        <mat-icon>search</mat-icon>
-      </button>
-    </mat-form-field>
-
-    <button mat-raised-button color="primary">
-      <mat-icon>add</mat-icon>
-      Ajouter
-    </button>
-  </div>
-
-  <!-- Data Table -->
-  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-    <!-- Checkbox Column -->
-    <ng-container matColumnDef="select">
-      <th mat-header-cell *matHeaderCellDef></th>
-      <td mat-cell *matCellDef="let element">
-        <mat-checkbox></mat-checkbox>
-      </td>
-    </ng-container>
-
-    <!-- Profile Column -->
-    <ng-container matColumnDef="profile">
-      <th mat-header-cell *matHeaderCellDef>Profile</th>
-      <td mat-cell *matCellDef="let element">
-        <div class="profile-cell">
-          <img src="assets/profile.jpg" alt="Profile" />
-          <div>
-            <div>{{ element.name }}</div>
-            <div class="subtitle">{{ element.title }}</div>
-          </div>
-        </div>
-      </td>
-    </ng-container>
-
-    <!-- Department Column -->
-    <ng-container matColumnDef="department">
-      <th mat-header-cell *matHeaderCellDef>Département</th>
-      <td mat-cell *matCellDef="let element">
-        <span class="tag" [ngClass]="element.departmentColor">
-          {{ element.department }}
-        </span>
-      </td>
-    </ng-container>
-
-    <!-- Phone Column -->
-    <ng-container matColumnDef="phone">
-      <th mat-header-cell *matHeaderCellDef>Numéro de téléphone</th>
-      <td mat-cell *matCellDef="let element">{{ element.phone }}</td>
-    </ng-container>
-
-    <!-- Faculty Column -->
-    <ng-container matColumnDef="faculty">
-      <th mat-header-cell *matHeaderCellDef>Faculté</th>
-      <td mat-cell *matCellDef="let element">{{ element.faculty }}</td>
-    </ng-container>
-
-    <!-- Actions Column -->
-    <ng-container matColumnDef="actions">
-      <th mat-header-cell *matHeaderCellDef>Action</th>
-      <td mat-cell *matCellDef="let element">
-        <button mat-icon-button color="primary"><mat-icon>edit</mat-icon></button>
-        <button mat-icon-button color="accent"><mat-icon>add</mat-icon></button>
-        <button mat-icon-button color="warn"><mat-icon>delete</mat-icon></button>
-      </td>
-    </ng-container>
-
-    <!-- Table Header and Row Definitions -->
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-  </table>
-
-  <!-- Pagination -->
-  <mat-paginator
-    [pageSizeOptions]="[10, 20, 50]"
-    showFirstLastButtons
-  ></mat-paginator>
 </div>

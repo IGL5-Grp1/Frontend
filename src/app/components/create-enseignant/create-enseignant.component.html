@@ -1,0 +1,120 @@
+
+
+<div class="layout">
+  <app-sidebar></app-sidebar> <!-- Sidebar -->
+  <div class="main-content">
+    <div class="header">
+      <button mat-icon-button>
+        <mat-icon
+          style="color: #006FFD; background-color: #E9F1FF; border-radius: 30px;"
+        >
+          arrow_back
+        </mat-icon>
+      </button>
+      <h2 style="color: #006FFD; margin-left: 10px;">Ajouter un nouveau professeur</h2>
+    </div>
+    <hr class="header-line" />
+
+    <div class="create-enseignant-container">
+      <!-- Profile Picture -->
+      <div class="profile-picture">
+        <img
+          src="assets/profile.jpg"
+          alt="Profile"
+          class="profile-img"
+        />
+        <button mat-icon-button color="primary" class="edit-icon">
+          <mat-icon>edit</mat-icon>
+        </button>
+      </div>
+
+      <!-- Form -->
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="form-grid">
+          <!-- Name -->
+          <mat-form-field appearance="outline">
+            <mat-label>Nom et Prénom</mat-label>
+            <input matInput formControlName="name" />
+            <mat-error *ngIf="form.get('name')?.hasError('required')">
+              Ce champ est obligatoire
+            </mat-error>
+          </mat-form-field>
+
+          <!-- Grade -->
+          <mat-form-field appearance="outline">
+            <mat-label>Grade</mat-label>
+            <mat-select formControlName="grade">
+              <mat-option *ngFor="let grade of grades" [value]="grade">
+                {{ grade.name }}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="form.get('grade')?.hasError('required')">
+              Ce champ est obligatoire
+            </mat-error>
+          </mat-form-field>
+
+          <!-- Department -->
+          <mat-form-field appearance="outline">
+            <mat-label>Département</mat-label>
+            <mat-select formControlName="department">
+              <mat-option
+                *ngFor="let department of departments"
+                [value]="department"
+              >
+                {{ department.name }}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="form.get('department')?.hasError('required')">
+              Ce champ est obligatoire
+            </mat-error>
+          </mat-form-field>
+
+          <!-- Email -->
+          <mat-form-field appearance="outline">
+            <mat-label>Adresse email</mat-label>
+            <input matInput formControlName="email" />
+            <mat-error *ngIf="form.get('email')?.hasError('required')">
+              Ce champ est obligatoire
+            </mat-error>
+            <mat-error *ngIf="form.get('email')?.hasError('pattern')">
+              Veuillez entrer un numéro valide
+            </mat-error>
+          </mat-form-field>
+
+          <!-- Faculty -->
+          <mat-form-field appearance="outline">
+            <mat-label>Faculté</mat-label>
+            <mat-select formControlName="faculty">
+              <mat-option *ngFor="let faculty of faculties" [value]="faculty">
+                {{ faculty.name }}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="form.get('faculty')?.hasError('required')">
+              Ce champ est obligatoire
+            </mat-error>
+          </mat-form-field>
+
+          <!-- CIN -->
+          <mat-form-field appearance="outline">
+            <mat-label>CIN</mat-label>
+            <input matInput formControlName="cin" />
+            <mat-error *ngIf="form.get('cin')?.hasError('required')">
+              Ce champ est obligatoire
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="submit-button">
+          <button
+            mat-raised-button
+            style="background-color: #006FFD; color: white;"
+            type="submit"
+          >
+            Enregistrer
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
