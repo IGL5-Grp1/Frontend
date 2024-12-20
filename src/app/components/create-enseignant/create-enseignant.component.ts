@@ -60,8 +60,8 @@ export class CreateEnseignantComponent {
         username: this.form.value.name,
         email: this.form.value.email,
         cin: this.form.value.cin,
-        id_departement: this.form.value.department.id,
-        id_grade: this.form.value.grade.id,
+        departmentId: this.form.value.department.id,
+        gradeId: this.form.value.grade.id,
       };
 
       this.enseignantService.addEnseignant(formData).subscribe({
