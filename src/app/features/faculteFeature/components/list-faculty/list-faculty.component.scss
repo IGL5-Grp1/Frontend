@@ -1,0 +1,115 @@
+.layout {
+    display: flex; /* Disposition en colonnes */
+    min-height: 100vh; /* Prend toute la hauteur de l'écran */
+  
+    app-sidebar {
+      width: 280px; /* Largeur fixe pour la barre latérale */
+      flex-shrink: 0; /* Empêche la barre latérale de se réduire */
+      background-color: #0d47a1; /* Couleur de la barre latérale */
+      color: white;
+    }
+  
+    .main-content {
+      flex: 1; /* Le contenu principal occupe tout l'espace disponible */
+      padding: 20px; /* Ajoute un espacement autour du contenu principal */
+      background-color: #ffffff; /* Couleur de fond */
+    }
+  }
+  .header {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 10px;
+  
+  
+    h2 {
+      margin: 0;
+      font-size: 27px;
+      
+    }
+    
+  }
+  .header-line {
+    border: none;
+    border-top: 2px solid #e0e0e0; // Light gray line
+    margin: 10px 0; // Space between title and rest of the content
+    margin-bottom: 60px;
+  
+  }
+  .faculty-management-container {
+    padding: 20px;
+  
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+  
+      h2 {
+        margin: 0;
+      }
+    }
+  
+    .search-bar {
+      display: flex;
+      justify-content: space-between;
+      margin: 20px 0px 0px 0px;
+      mat-form-field {
+        flex: 1;
+        margin-right: 10px;
+      }
+    }
+  
+    table {
+      width: 100%;
+  
+      .profile-cell {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+  
+        img {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+        }
+  
+        .subtitle {
+          font-size: 12px;
+          color: gray;
+        }
+      }
+  
+      .tag {
+        padding: 4px 8px;
+        border-radius: 12px;
+        font-size: 12px;
+        font-weight: 600;
+  
+        &.green {
+          background-color: #e0f2f1;
+          color: #00796b;
+        }
+        &.orange {
+          background-color: #ffe0b2;
+          color: #e65100;
+        }
+        &.yellow {
+          background-color: #fff9c4;
+          color: #fbc02d;
+        }
+        &.blue {
+          background-color: #e3f2fd;
+          color: #1976d2;
+        }
+        &.red {
+          background-color: #ffebee;
+          color: #c62828;
+        }
+      }
+    }
+  
+    mat-paginator {
+      margin-top: 20px;
+    }
+  }
+  

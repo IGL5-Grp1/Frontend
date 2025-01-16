@@ -16,7 +16,7 @@
         <span style="color: white; font-size: 15px; font-weight: 400;">Dashboard</span>
       </a>
     
-      <a mat-list-item routerLink="/universities" style="display: flex; align-items: center; padding: 6px 10px; text-decoration: none;">
+      <a mat-list-item [routerLink]="'/list-faculty'" style="display: flex; align-items: center; padding: 6px 10px; text-decoration: none;">
         <mat-icon style="color: white; margin-right: 8px; font-size: 18px;">school</mat-icon>
         <span style="color: white; font-size: 15px; font-weight: 400;">Gestion des Universités</span>
       </a>
@@ -26,7 +26,7 @@
         <span style="color: white; font-size: 15px; font-weight: 400;">Gestion des Sessions</span>
       </a>
     
-      <a mat-list-item routerLink="/departments" style="display: flex; align-items: center; padding: 6px 10px; text-decoration: none;">
+      <a mat-list-item [routerLink]="'/list-departements'" style="display: flex; align-items: center; padding: 6px 10px; text-decoration: none;">
         <mat-icon style="color: white; margin-right: 8px; font-size: 18px;">apartment</mat-icon>
         <span style="color: white; font-size: 15px; font-weight: 400;">Gestion des Départements</span>
       </a>
