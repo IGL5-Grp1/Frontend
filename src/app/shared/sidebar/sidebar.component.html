@@ -31,11 +31,10 @@
         <span style="color: white; font-size: 15px; font-weight: 400;">Gestion des Départements</span>
       </a>
     
-      <a mat-list-item routerLink="/professors" style="display: flex; align-items: center; padding: 6px 10px; text-decoration: none;">
+      <a mat-list-item [routerLink]="'/teacher-table'" style="display: flex; align-items: center; padding: 6px 10px; text-decoration: none;">
         <mat-icon style="color: white; margin-right: 8px; font-size: 18px;">people</mat-icon>
-        <span style="color: white; font-size: 15px; font-weight: 400;">Gestion des Professeurs</span>
+        <span style="color: white; font-size: 15px; font-weight: 400;">Gestion des Enseignants</span>
       </a>
-    
       <a mat-list-item routerLink="/students" style="display: flex; align-items: center; padding: 6px 10px; text-decoration: none;">
         <mat-icon style="color: white; margin-right: 8px; font-size: 18px;">person</mat-icon>
         <span style="color: white; font-size: 15px; font-weight: 400;">Gestion des Etudiants</span>

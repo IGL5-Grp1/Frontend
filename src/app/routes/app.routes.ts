@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
-import { TeacherTableComponent } from './components/teacher-table/teacher-table.component';
-import { CreateEnseignantComponent } from './components/create-enseignant/create-enseignant.component';
-import { LoginComponent } from './components/login/login.component';
-import { AuthGuard } from './components/login/auth.guard';
+import { TeacherTableComponent } from '../features/enseignantFeature/components/teacher-table/teacher-table.component';
+import { CreateEnseignantComponent } from '../features/enseignantFeature/components/create-enseignant/create-enseignant.component';
+import { LoginComponent } from '../core/authentification/login/login.component';
+import { AuthGuard } from '../core/authentification/guard/auth.guard';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },

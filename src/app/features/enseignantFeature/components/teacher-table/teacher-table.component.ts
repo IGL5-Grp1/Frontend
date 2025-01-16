@@ -8,7 +8,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatPaginatorIntl } from '@angular/material/paginator';
-import { SidebarComponent } from '../sidebar/sidebar.component';
+import { SidebarComponent } from '../../../../shared/sidebar/sidebar.component';
 import { EnseignantService } from '../../services/enseignant.service';
 import { RouterModule } from '@angular/router';
 
